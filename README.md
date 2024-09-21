@@ -13,9 +13,6 @@ This is a simple guessing game implemented using Python and sockets.
 
 # Project Statement of Work (SOW)
 
-### Project Title:
-**Guessing Game**
-
 ### Team:
 **Filip Lewulis & Corey Valentine**
 
