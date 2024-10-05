@@ -1,0 +1,9 @@
+2024-10-05 12:00:21,665 - INFO - Server started on 127.0.0.1:12345
+2024-10-05 12:00:41,438 - INFO - Client ('127.0.0.1', 55578) connected.
+2024-10-05 12:00:41,439 - INFO - Client ('127.0.0.1', 55578) disconnected.
+2024-10-05 12:00:41,439 - INFO - Client ('127.0.0.1', 55578) disconnected.
+2024-10-05 12:01:41,439 - ERROR - Server timed out waiting for a connection.
+2024-10-05 12:02:41,439 - ERROR - Server timed out waiting for a connection.
+2024-10-05 12:03:41,440 - ERROR - Server timed out waiting for a connection.
+2024-10-05 12:04:41,441 - ERROR - Server timed out waiting for a connection.
+2024-10-05 12:05:41,441 - ERROR - Server timed out waiting for a connection.
