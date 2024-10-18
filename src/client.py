@@ -1,5 +1,6 @@
 import socket
 import logging
+import math
 import os
 
 class TCPClient:
@@ -9,6 +10,9 @@ class TCPClient:
         """Initialize the client with server IP and port."""
         self.server_ip = server_ip
         self.server_port = server_port
+        self.message = {}
+        self.current_guess = 0
+        self.ball_location = 0
 
         self._setup_logging()
         self.client_socket = self._create_client_socket()
@@ -70,6 +74,35 @@ class TCPClient:
         except socket.error as e:
             logging.error(f"Failed to close connection: {e}")
 
+    def make_guess(self):
+        """Accept user input for guess"""
+        guess = int(input('Pick a cup [1], [2], [3]: '))
+        while(not isinstance(guess, int) or guess<1 or guess>3):
+            guess = int(input('Guess must be between 1-3. Pick a cup: '))
+        self.current_guess = guess
+
+    def guess_msg(self):
+        """Guess message"""
+        self.message = {'guess': self.current_guess}
+
+    def print_cups(self):
+        columns, rows = os.get_terminal_size()
+        if rows>3 and columns>5:
+            bot_width = math.floor(columns/4)
+            width = math.floor(columns/8)
+            gap = math.floor((bot_width-width)/2)
+            slope = math.ceil(rows/(bot_width-width))
+            print(' ', ' '*gap, '▃'*width, ' '*gap*2, '▃'*width, ' ', ' '*gap*2, '▃'*width)
+            for r in range(math.floor(rows/3)):
+                if r % slope==0:
+                    width = width+2; gap = gap-1
+                print(' ',' '*gap, '█'*width, ' '*gap*2, '█'*width, ' ', ' '*gap*2, '█'*width)
+            print(' ', '▔'*bot_width, ' ', '▔'*bot_width, ' ', '▔'*bot_width)
+
+    def print_ball(self):
+        columns, _ = os.get_terminal_size()
+        increment = math.floor(columns/8)
+        print(' '*self.ball_location, ' '*increment*(2*self.ball_location-1), '⚪︎')
 
 # Example usage
 if __name__ == "__main__":
@@ -78,6 +111,7 @@ if __name__ == "__main__":
     SERVER_PORT = 12345
 
     client = TCPClient(server_ip=SERVER_IP, server_port=SERVER_PORT)
+
     if client.client_socket:  # Proceed if connected successfully
         client.send_message("Hello Server!")
         client.close_connection()
