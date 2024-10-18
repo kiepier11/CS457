@@ -2,6 +2,7 @@ import socket
 import threading
 import logging
 import os
+import random
 
 class TCPServer:
     """A simple TCP Server that can handle multiple clients."""
@@ -12,6 +13,9 @@ class TCPServer:
         self.port = port
         self.max_clients = max_clients
         self.timeout = timeout
+        self.message = {}
+        self.ball_location = 0
+        self.scores = {}
 
         self._setup_logging()
         self.server_socket = self._create_server_socket()
@@ -38,6 +42,7 @@ class TCPServer:
     def handle_client(self, client_socket, client_address):
         """Handle communication with a connected client."""
         logging.info(f"Client {client_address} connected.")
+        self.scores[client_address] = 0
         print(f"Client {client_address} connected.")
 
         try:
@@ -60,15 +65,15 @@ class TCPServer:
                 logging.info(f"Client {client_address} disconnected.")
                 return None
             print(f"Received from {client_address}: {message}")
-            return message
+            self.message = message
         except Exception as e:
             logging.error(f"Error receiving message from {client_address}: {e}")
             return None
 
-    def _send_message(self, client_socket, message):
+    def _send_message(self, client_socket):
         """Send a message to the client."""
         try:
-            client_socket.send(message.encode())
+            client_socket.send(self.message.encode())
         except Exception as e:
             logging.error(f"Error sending message: {e}")
 
@@ -102,6 +107,21 @@ class TCPServer:
                 logging.error(f"Error accepting connection: {e}")
                 print(f"Error accepting connection: {e}")
 
+    def pick_random(self):
+        """Pick random ball location between 1 and 3"""
+        self.ball_location = random.randrange(1,4)
+        
+    def round_start_msg(self):
+        """Round start message"""
+        self.message = {'start': True}
+
+    def answer_msg(self):
+        """Ball location message"""
+        self.message = {'answer': self.ball_location}
+
+    def winner_msg(self, client):
+        """Round end message with player score"""
+        self.message = {'start': False, 'score': self.scores[client]}
 
 # Example usage
 if __name__ == "__main__":
