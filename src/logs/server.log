@@ -51,3 +51,68 @@
 2024-10-20 21:00:56,160 - ERROR - Server timed out waiting for a connection.
 2024-10-20 21:01:56,158 - ERROR - Server timed out waiting for a connection.
 2024-10-20 21:02:56,148 - ERROR - Server timed out waiting for a connection.
+2024-11-03 14:52:26,430 - INFO - Server started on 127.0.0.1:12345
+2024-11-03 14:52:42,661 - INFO - Client ('127.0.0.1', 61788) connected.
+2024-11-03 14:52:42,665 - ERROR - Error receiving message: [WinError 10054] An existing connection was forcibly closed by the remote host
+2024-11-03 14:52:42,665 - INFO - Player 1 disconnected.
+2024-11-03 14:53:03,184 - INFO - Client ('127.0.0.1', 61795) connected.
+2024-11-03 14:53:03,187 - ERROR - Error receiving message: [WinError 10054] An existing connection was forcibly closed by the remote host
+2024-11-03 14:53:03,188 - INFO - Player 1 disconnected.
+2024-11-03 14:53:17,913 - INFO - Client ('127.0.0.1', 61799) connected.
+2024-11-03 14:53:17,917 - ERROR - Error receiving message: [WinError 10054] An existing connection was forcibly closed by the remote host
+2024-11-03 14:53:17,917 - INFO - Player 1 disconnected.
+2024-11-03 14:54:17,913 - ERROR - Server timed out waiting for a connection.
+2024-11-03 14:55:17,913 - ERROR - Server timed out waiting for a connection.
+2024-11-03 14:56:18,902 - INFO - Server started on 127.0.0.1:12345
+2024-11-03 14:56:26,202 - INFO - Client ('127.0.0.1', 61865) connected.
+2024-11-03 14:56:26,206 - ERROR - Error receiving message: [WinError 10054] An existing connection was forcibly closed by the remote host
+2024-11-03 14:56:26,207 - INFO - Player 1 disconnected.
+2024-11-03 14:56:44,871 - INFO - Client ('127.0.0.1', 61869) connected.
+2024-11-03 14:56:44,876 - ERROR - Error receiving message: [WinError 10054] An existing connection was forcibly closed by the remote host
+2024-11-03 14:56:44,877 - INFO - Player 1 disconnected.
+2024-11-03 14:57:44,871 - ERROR - Server timed out waiting for a connection.
+2024-11-03 14:58:44,871 - ERROR - Server timed out waiting for a connection.
+2024-11-03 14:59:44,870 - ERROR - Server timed out waiting for a connection.
+2024-11-03 15:00:44,870 - ERROR - Server timed out waiting for a connection.
+2024-11-03 15:01:44,870 - ERROR - Server timed out waiting for a connection.
+2024-11-03 15:02:34,051 - INFO - Server started on 127.0.0.1:12345
+2024-11-03 15:02:34,051 - INFO - Starting server...
+2024-11-03 15:02:46,638 - INFO - Client ('127.0.0.1', 62120) connected.
+2024-11-03 15:02:46,638 - INFO - Received from ('127.0.0.1', 62120): {"type": "join", "username": "player1"}
+2024-11-03 15:03:03,636 - INFO - Client ('127.0.0.1', 62126) connected.
+2024-11-03 15:03:03,636 - INFO - Received from ('127.0.0.1', 62126): {"type": "join", "username": "player1"}
+2024-11-03 15:03:29,164 - INFO - Received from ('127.0.0.1', 62120): {"type": "move", "position": 3}
+2024-11-03 15:03:29,167 - INFO - Client ('127.0.0.1', 62120) disconnected.
+2024-11-03 15:03:29,167 - INFO - Client ('127.0.0.1', 62120) disconnected.
+2024-11-03 15:03:33,434 - INFO - Received from ('127.0.0.1', 62126): {"type": "move", "position": 3}
+2024-11-03 15:03:33,437 - INFO - Client ('127.0.0.1', 62126) disconnected.
+2024-11-03 15:03:33,437 - INFO - Client ('127.0.0.1', 62126) disconnected.
+2024-11-03 15:03:36,050 - INFO - Client ('127.0.0.1', 62135) connected.
+2024-11-03 15:03:36,050 - INFO - Received from ('127.0.0.1', 62135): {"type": "join", "username": "player1"}
+2024-11-03 15:03:37,642 - INFO - Received from ('127.0.0.1', 62135): {"type": "move", "position": 2}
+2024-11-03 15:03:37,645 - INFO - Client ('127.0.0.1', 62135) disconnected.
+2024-11-03 15:03:37,645 - INFO - Client ('127.0.0.1', 62135) disconnected.
+2024-11-03 15:05:16,237 - INFO - Server started on 127.0.0.1:12345
+2024-11-03 15:05:16,237 - INFO - Starting server...
+2024-11-03 15:05:20,540 - INFO - Client ('127.0.0.1', 62166) connected.
+2024-11-03 15:05:20,540 - INFO - Received from ('127.0.0.1', 62166): {"type": "join", "username": "player1"}
+2024-11-03 15:05:27,192 - INFO - Received from ('127.0.0.1', 62166): {"type": "move", "position": 2}
+2024-11-03 15:05:33,476 - INFO - Client ('127.0.0.1', 62171) connected.
+2024-11-03 15:05:33,477 - INFO - Received from ('127.0.0.1', 62171): {"type": "join", "username": "player1"}
+2024-11-03 15:05:37,031 - INFO - Received from ('127.0.0.1', 62171): {"type": "move", "position": 1}
+2024-11-03 15:07:50,612 - INFO - Server started on 127.0.0.1:12345
+2024-11-03 15:07:50,612 - INFO - Starting server...
+2024-11-03 15:08:02,753 - INFO - Client ('127.0.0.1', 62254) connected as Player 1.
+2024-11-03 15:08:02,753 - INFO - Received from ('127.0.0.1', 62254): {"type": "join", "username": "player1"}
+2024-11-03 15:08:02,753 - INFO - Player 1 joined the game.
+2024-11-03 15:08:05,938 - INFO - Client ('127.0.0.1', 62256) connected as Player 2.
+2024-11-03 15:08:05,938 - INFO - Received from ('127.0.0.1', 62256): {"type": "join", "username": "player1"}
+2024-11-03 15:08:05,938 - INFO - Player 2 joined the game.
+2024-11-03 15:08:12,495 - INFO - Received from ('127.0.0.1', 62256): {"type": "move", "position": 2}
+2024-11-03 15:08:12,495 - INFO - Player 2 made a move to position 2
+2024-11-03 15:08:17,262 - INFO - Received from ('127.0.0.1', 62254): {"type": "move", "position": 1}
+2024-11-03 15:08:17,262 - INFO - Player 1 made a move to position 1
+2024-11-03 15:08:28,673 - INFO - Client ('127.0.0.1', 62254) disconnected.
+2024-11-03 15:08:28,673 - INFO - Client ('127.0.0.1', 62254) disconnected.
+2024-11-03 15:08:41,444 - INFO - Client ('127.0.0.1', 62256) disconnected.
+2024-11-03 15:08:41,444 - INFO - Client ('127.0.0.1', 62256) disconnected.
