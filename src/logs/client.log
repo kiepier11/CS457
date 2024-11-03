@@ -1,2 +1,8 @@
 2024-10-05 12:00:41,437 - INFO - Connected to 127.0.0.1:12345
 2024-10-05 12:00:41,439 - INFO - Connection closed.
+2024-10-20 19:09:06,476 - ERROR - Failed to connect to server: [WinError 10061] No connection could be made because the target machine actively refused it
+2024-10-20 20:21:56,139 - INFO - Connected to 127.0.0.1:12345
+2024-10-20 20:21:56,140 - ERROR - Error receiving message: Expecting value: line 1 column 1 (char 0)
+2024-10-20 20:21:58,340 - ERROR - Error receiving message: [WinError 10053] An established connection was aborted by the software in your host machine
+2024-10-20 20:21:58,340 - ERROR - Communication error: [WinError 10053] An established connection was aborted by the software in your host machine
+2024-10-20 20:21:58,341 - INFO - Connection closed.

@@ -1,29 +1,25 @@
 import socket
 import logging
-import math
+import json
 import os
 
 class TCPClient:
     """A simple TCP Client to communicate with the TCP Server."""
 
     def __init__(self, server_ip='127.0.0.1', server_port=12345):
-        """Initialize the client with server IP and port."""
         self.server_ip = server_ip
         self.server_port = server_port
-        self.message = {}
+        self.username = "player1"
         self.current_guess = 0
-        self.ball_location = 0
 
         self._setup_logging()
         self.client_socket = self._create_client_socket()
 
     def _setup_logging(self):
         """Set up logging to file for client events and errors."""
-        os.makedirs('logs', exist_ok=True)  # Create logs directory if it doesn't exist
-        logging.basicConfig(
-            filename='logs/client.log', level=logging.DEBUG,  # Logs are stored in the logs directory
-            format='%(asctime)s - %(levelname)s - %(message)s'
-        )
+        os.makedirs('logs', exist_ok=True)
+        logging.basicConfig(filename='logs/client.log', level=logging.DEBUG,
+                            format='%(asctime)s - %(levelname)s - %(message)s')
 
     def _create_client_socket(self):
         """Create and connect the client socket to the server."""
@@ -45,7 +41,7 @@ class TCPClient:
             return
 
         try:
-            self.client_socket.send(message.encode())
+            self.client_socket.send(json.dumps(message).encode())
             response = self._receive_message()
             print(f"Server response: {response}")
         except BrokenPipeError:
@@ -54,9 +50,10 @@ class TCPClient:
             logging.error(f"Communication error: {e}")
 
     def _receive_message(self):
-        """Receive message from the server."""
+        """Receive a message from the server."""
         try:
-            return self.client_socket.recv(1024).decode()
+            response = self.client_socket.recv(1024).decode()
+            return json.loads(response)
         except Exception as e:
             logging.error(f"Error receiving message: {e}")
             return None
@@ -75,43 +72,30 @@ class TCPClient:
             logging.error(f"Failed to close connection: {e}")
 
     def make_guess(self):
-        """Accept user input for guess"""
-        guess = int(input('Pick a cup [1], [2], [3]: '))
-        while(not isinstance(guess, int) or guess<1 or guess>3):
-            guess = int(input('Guess must be between 1-3. Pick a cup: '))
-        self.current_guess = guess
+        """Prompt the user for a guess and send the message to the server."""
+        self.current_guess = int(input('Pick a cup [1], [2], [3]: '))
+        guess_message = {"type": "move", "guess": self.current_guess}
+        self.send_message(guess_message)
 
-    def guess_msg(self):
-        """Guess message"""
-        self.message = {'guess': self.current_guess}
+    def join_game(self):
+        """Send a join request to the server."""
+        join_message = {"type": "join", "username": self.username}
+        self.send_message(join_message)
 
-    def print_cups(self):
-        columns, rows = os.get_terminal_size()
-        if rows>3 and columns>5:
-            bot_width = math.floor(columns/4)
-            width = math.floor(columns/8)
-            gap = math.floor((bot_width-width)/2)
-            slope = math.ceil(rows/(bot_width-width))
-            print(' ', ' '*gap, '▃'*width, ' '*gap*2, '▃'*width, ' ', ' '*gap*2, '▃'*width)
-            for r in range(math.floor(rows/3)):
-                if r % slope==0:
-                    width = width+2; gap = gap-1
-                print(' ',' '*gap, '█'*width, ' '*gap*2, '█'*width, ' ', ' '*gap*2, '█'*width)
-            print(' ', '▔'*bot_width, ' ', '▔'*bot_width, ' ', '▔'*bot_width)
-
-    def print_ball(self):
-        columns, _ = os.get_terminal_size()
-        increment = math.floor(columns/8)
-        print(' '*self.ball_location, ' '*increment*(2*self.ball_location-1), '⚪︎')
+    def quit_game(self):
+        """Send a quit message to the server."""
+        quit_message = {"type": "quit", "username": self.username}
+        self.send_message(quit_message)
+        self.close_connection()
 
 # Example usage
 if __name__ == "__main__":
-    # Configurable variables
     SERVER_IP = '127.0.0.1'
     SERVER_PORT = 12345
 
     client = TCPClient(server_ip=SERVER_IP, server_port=SERVER_PORT)
 
     if client.client_socket:  # Proceed if connected successfully
-        client.send_message("Hello Server!")
-        client.close_connection()
+        client.join_game()
+        client.make_guess()
+        client.quit_game()

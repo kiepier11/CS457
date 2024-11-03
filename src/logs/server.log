@@ -7,3 +7,47 @@
 2024-10-05 12:03:41,440 - ERROR - Server timed out waiting for a connection.
 2024-10-05 12:04:41,441 - ERROR - Server timed out waiting for a connection.
 2024-10-05 12:05:41,441 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:21:38,370 - INFO - Server started on 127.0.0.1:12345
+2024-10-20 20:21:56,140 - INFO - Client ('127.0.0.1', 62975) connected.
+2024-10-20 20:21:56,140 - INFO - Client ('127.0.0.1', 62975) disconnected.
+2024-10-20 20:22:56,141 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:23:56,142 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:24:56,142 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:25:56,142 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:26:56,143 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:27:56,144 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:28:56,144 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:29:56,144 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:30:56,144 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:31:56,145 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:32:56,145 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:33:56,146 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:34:56,147 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:35:56,147 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:36:56,147 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:37:56,148 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:38:56,148 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:39:56,149 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:40:56,150 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:41:56,151 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:42:56,151 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:43:56,152 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:44:56,152 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:45:56,152 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:46:56,152 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:47:56,153 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:48:56,154 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:49:56,154 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:50:56,154 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:51:56,155 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:52:56,156 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:53:56,156 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:54:56,156 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:55:56,157 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:56:56,158 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:57:56,158 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:58:56,159 - ERROR - Server timed out waiting for a connection.
+2024-10-20 20:59:56,159 - ERROR - Server timed out waiting for a connection.
+2024-10-20 21:00:56,160 - ERROR - Server timed out waiting for a connection.
+2024-10-20 21:01:56,158 - ERROR - Server timed out waiting for a connection.
+2024-10-20 21:02:56,148 - ERROR - Server timed out waiting for a connection.
