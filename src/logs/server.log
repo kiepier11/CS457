@@ -1,118 +1,19 @@
-2024-10-05 12:00:21,665 - INFO - Server started on 127.0.0.1:12345
-2024-10-05 12:00:41,438 - INFO - Client ('127.0.0.1', 55578) connected.
-2024-10-05 12:00:41,439 - INFO - Client ('127.0.0.1', 55578) disconnected.
-2024-10-05 12:00:41,439 - INFO - Client ('127.0.0.1', 55578) disconnected.
-2024-10-05 12:01:41,439 - ERROR - Server timed out waiting for a connection.
-2024-10-05 12:02:41,439 - ERROR - Server timed out waiting for a connection.
-2024-10-05 12:03:41,440 - ERROR - Server timed out waiting for a connection.
-2024-10-05 12:04:41,441 - ERROR - Server timed out waiting for a connection.
-2024-10-05 12:05:41,441 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:21:38,370 - INFO - Server started on 127.0.0.1:12345
-2024-10-20 20:21:56,140 - INFO - Client ('127.0.0.1', 62975) connected.
-2024-10-20 20:21:56,140 - INFO - Client ('127.0.0.1', 62975) disconnected.
-2024-10-20 20:22:56,141 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:23:56,142 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:24:56,142 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:25:56,142 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:26:56,143 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:27:56,144 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:28:56,144 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:29:56,144 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:30:56,144 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:31:56,145 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:32:56,145 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:33:56,146 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:34:56,147 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:35:56,147 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:36:56,147 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:37:56,148 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:38:56,148 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:39:56,149 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:40:56,150 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:41:56,151 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:42:56,151 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:43:56,152 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:44:56,152 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:45:56,152 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:46:56,152 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:47:56,153 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:48:56,154 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:49:56,154 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:50:56,154 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:51:56,155 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:52:56,156 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:53:56,156 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:54:56,156 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:55:56,157 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:56:56,158 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:57:56,158 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:58:56,159 - ERROR - Server timed out waiting for a connection.
-2024-10-20 20:59:56,159 - ERROR - Server timed out waiting for a connection.
-2024-10-20 21:00:56,160 - ERROR - Server timed out waiting for a connection.
-2024-10-20 21:01:56,158 - ERROR - Server timed out waiting for a connection.
-2024-10-20 21:02:56,148 - ERROR - Server timed out waiting for a connection.
-2024-11-03 14:52:26,430 - INFO - Server started on 127.0.0.1:12345
-2024-11-03 14:52:42,661 - INFO - Client ('127.0.0.1', 61788) connected.
-2024-11-03 14:52:42,665 - ERROR - Error receiving message: [WinError 10054] An existing connection was forcibly closed by the remote host
-2024-11-03 14:52:42,665 - INFO - Player 1 disconnected.
-2024-11-03 14:53:03,184 - INFO - Client ('127.0.0.1', 61795) connected.
-2024-11-03 14:53:03,187 - ERROR - Error receiving message: [WinError 10054] An existing connection was forcibly closed by the remote host
-2024-11-03 14:53:03,188 - INFO - Player 1 disconnected.
-2024-11-03 14:53:17,913 - INFO - Client ('127.0.0.1', 61799) connected.
-2024-11-03 14:53:17,917 - ERROR - Error receiving message: [WinError 10054] An existing connection was forcibly closed by the remote host
-2024-11-03 14:53:17,917 - INFO - Player 1 disconnected.
-2024-11-03 14:54:17,913 - ERROR - Server timed out waiting for a connection.
-2024-11-03 14:55:17,913 - ERROR - Server timed out waiting for a connection.
-2024-11-03 14:56:18,902 - INFO - Server started on 127.0.0.1:12345
-2024-11-03 14:56:26,202 - INFO - Client ('127.0.0.1', 61865) connected.
-2024-11-03 14:56:26,206 - ERROR - Error receiving message: [WinError 10054] An existing connection was forcibly closed by the remote host
-2024-11-03 14:56:26,207 - INFO - Player 1 disconnected.
-2024-11-03 14:56:44,871 - INFO - Client ('127.0.0.1', 61869) connected.
-2024-11-03 14:56:44,876 - ERROR - Error receiving message: [WinError 10054] An existing connection was forcibly closed by the remote host
-2024-11-03 14:56:44,877 - INFO - Player 1 disconnected.
-2024-11-03 14:57:44,871 - ERROR - Server timed out waiting for a connection.
-2024-11-03 14:58:44,871 - ERROR - Server timed out waiting for a connection.
-2024-11-03 14:59:44,870 - ERROR - Server timed out waiting for a connection.
-2024-11-03 15:00:44,870 - ERROR - Server timed out waiting for a connection.
-2024-11-03 15:01:44,870 - ERROR - Server timed out waiting for a connection.
-2024-11-03 15:02:34,051 - INFO - Server started on 127.0.0.1:12345
-2024-11-03 15:02:34,051 - INFO - Starting server...
-2024-11-03 15:02:46,638 - INFO - Client ('127.0.0.1', 62120) connected.
-2024-11-03 15:02:46,638 - INFO - Received from ('127.0.0.1', 62120): {"type": "join", "username": "player1"}
-2024-11-03 15:03:03,636 - INFO - Client ('127.0.0.1', 62126) connected.
-2024-11-03 15:03:03,636 - INFO - Received from ('127.0.0.1', 62126): {"type": "join", "username": "player1"}
-2024-11-03 15:03:29,164 - INFO - Received from ('127.0.0.1', 62120): {"type": "move", "position": 3}
-2024-11-03 15:03:29,167 - INFO - Client ('127.0.0.1', 62120) disconnected.
-2024-11-03 15:03:29,167 - INFO - Client ('127.0.0.1', 62120) disconnected.
-2024-11-03 15:03:33,434 - INFO - Received from ('127.0.0.1', 62126): {"type": "move", "position": 3}
-2024-11-03 15:03:33,437 - INFO - Client ('127.0.0.1', 62126) disconnected.
-2024-11-03 15:03:33,437 - INFO - Client ('127.0.0.1', 62126) disconnected.
-2024-11-03 15:03:36,050 - INFO - Client ('127.0.0.1', 62135) connected.
-2024-11-03 15:03:36,050 - INFO - Received from ('127.0.0.1', 62135): {"type": "join", "username": "player1"}
-2024-11-03 15:03:37,642 - INFO - Received from ('127.0.0.1', 62135): {"type": "move", "position": 2}
-2024-11-03 15:03:37,645 - INFO - Client ('127.0.0.1', 62135) disconnected.
-2024-11-03 15:03:37,645 - INFO - Client ('127.0.0.1', 62135) disconnected.
-2024-11-03 15:05:16,237 - INFO - Server started on 127.0.0.1:12345
-2024-11-03 15:05:16,237 - INFO - Starting server...
-2024-11-03 15:05:20,540 - INFO - Client ('127.0.0.1', 62166) connected.
-2024-11-03 15:05:20,540 - INFO - Received from ('127.0.0.1', 62166): {"type": "join", "username": "player1"}
-2024-11-03 15:05:27,192 - INFO - Received from ('127.0.0.1', 62166): {"type": "move", "position": 2}
-2024-11-03 15:05:33,476 - INFO - Client ('127.0.0.1', 62171) connected.
-2024-11-03 15:05:33,477 - INFO - Received from ('127.0.0.1', 62171): {"type": "join", "username": "player1"}
-2024-11-03 15:05:37,031 - INFO - Received from ('127.0.0.1', 62171): {"type": "move", "position": 1}
-2024-11-03 15:07:50,612 - INFO - Server started on 127.0.0.1:12345
-2024-11-03 15:07:50,612 - INFO - Starting server...
-2024-11-03 15:08:02,753 - INFO - Client ('127.0.0.1', 62254) connected as Player 1.
-2024-11-03 15:08:02,753 - INFO - Received from ('127.0.0.1', 62254): {"type": "join", "username": "player1"}
-2024-11-03 15:08:02,753 - INFO - Player 1 joined the game.
-2024-11-03 15:08:05,938 - INFO - Client ('127.0.0.1', 62256) connected as Player 2.
-2024-11-03 15:08:05,938 - INFO - Received from ('127.0.0.1', 62256): {"type": "join", "username": "player1"}
-2024-11-03 15:08:05,938 - INFO - Player 2 joined the game.
-2024-11-03 15:08:12,495 - INFO - Received from ('127.0.0.1', 62256): {"type": "move", "position": 2}
-2024-11-03 15:08:12,495 - INFO - Player 2 made a move to position 2
-2024-11-03 15:08:17,262 - INFO - Received from ('127.0.0.1', 62254): {"type": "move", "position": 1}
-2024-11-03 15:08:17,262 - INFO - Player 1 made a move to position 1
-2024-11-03 15:08:28,673 - INFO - Client ('127.0.0.1', 62254) disconnected.
-2024-11-03 15:08:28,673 - INFO - Client ('127.0.0.1', 62254) disconnected.
-2024-11-03 15:08:41,444 - INFO - Client ('127.0.0.1', 62256) disconnected.
-2024-11-03 15:08:41,444 - INFO - Client ('127.0.0.1', 62256) disconnected.
+2024-11-17 16:31:44,054 - ERROR - Connection reset by client ('127.0.0.1', 59733): [WinError 10054] An existing connection was forcibly closed by the remote host
+2024-11-17 16:31:44,055 - INFO - Player 1 disconnected.
+2024-11-17 16:32:06,671 - INFO - Server started on 0.0.0.0:12345
+2024-11-17 16:32:06,671 - INFO - Starting server...
+2024-11-17 16:32:09,320 - INFO - Player 1 joined.
+2024-11-17 16:32:12,623 - INFO - Player 2 joined.
+2024-11-17 16:32:15,251 - INFO - Player 2 disconnected.
+2024-11-17 16:32:53,972 - INFO - Server started on 0.0.0.0:12345
+2024-11-17 16:32:53,973 - INFO - Starting server...
+2024-11-17 16:32:59,854 - INFO - Player 1 joined.
+2024-11-17 16:33:03,916 - INFO - Player 2 joined.
+2024-11-17 16:34:26,138 - ERROR - Error with client ('127.0.0.1', 59766): [WinError 10054] An existing connection was forcibly closed by the remote host
+2024-11-17 16:34:26,138 - INFO - Player 2 disconnected.
+2024-11-17 16:34:33,148 - ERROR - Error with client ('127.0.0.1', 59765): [WinError 10054] An existing connection was forcibly closed by the remote host
+2024-11-17 16:34:33,148 - INFO - Player 1 disconnected.
+2024-11-17 16:40:15,069 - Server started on 0.0.0.0:12345
+2024-11-17 16:40:15,070 - Starting server...
+2024-11-17 16:40:20,094 - Server started on 0.0.0.0:12345
+2024-11-17 16:40:20,094 - Starting server...
