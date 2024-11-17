@@ -12,7 +12,7 @@ Server:
    python server.py -p <port>
    Example:
    python server.py -p 12345
-3. The server will start and wait for clients to connect. 
+3. The server will start and wait for clients to connect.
 
 Client:
 1. Navigate to the directory containing client.py.
@@ -28,28 +28,35 @@ Client:
 
 Gameplay
 
-Objective: Be the first player to guess the location of the marker three times.
+Objective:
+Be the first player to score 3 points by correctly guessing the location of the hidden marker.
 
 Game Flow:
-- Players are assigned unique IDs and take turns guessing the position of a hidden marker.
-- The server updates and synchronizes the game state across all connected clients after every move.
+1. Players are assigned unique IDs upon joining the game.
+2. The game alternates between two roles:
+   - The hider hides the marker by choosing a position (0-2).
+   - The guesser attempts to guess the hidden position.
+3. The guesser earns 1 point for each correct guess.
+4. Roles switch after each turn, and the game continues until a player scores 3 points.
+5. The game automatically announces the winner and resets.
 
 Game State Synchronization:
-- All clients will receive updates about the current turn, player moves, and the state of the game board.
-- The game will automatically announce the winner or notify players of a draw.
+- The server manages and synchronizes the game state for all connected clients.
+- Clients receive updates about the current turn, player moves, and scores after every action.
 
-Winning: The first player to guess the correct location three times is declared the winner.
+Winning:
+The first player to correctly guess the hidden position three times is declared the winner. After the game ends, players can choose to start a new round or quit.
 
 ---
 
 Features
 
-- Multiplayer Support: Supports multiple clients connecting to a single server.
-- Turn-Based Gameplay: Ensures players take turns guessing.
-- Real-Time State Updates: Synchronizes the game state across all clients after each move.
-- Unique Player Identification: Each player is assigned a unique ID, visible in logs and game state updates.
-- Resilient Connections: Handles disconnections gracefully and notifies remaining players.
-- Simple CLI Interface: Easy-to-use command-line interface for both server and client.
+- Multiplayer Support: Supports two players connected to a central server.
+- Turn-Based Gameplay: Ensures players alternate roles as hider and guesser.
+- Real-Time State Updates: Synchronizes game state across all clients after each move.
+- Unique Player Identification: Each player is assigned a unique ID, visible in logs and game updates.
+- Error Handling: Handles invalid inputs, disconnections, and reconnections gracefully.
+- Simple CLI Interface: User-friendly command-line interface for both server and client.
 
 ---
 
@@ -67,7 +74,8 @@ Technologies Used
 Project Statement of Work (SOW)
 
 Team:
-Filip Lewulis & Corey Valentine
+- Filip Lewulis
+- Corey Valentine
 
 Project Objective:
 Create a command-line multiplayer game where players compete to guess the location of a hidden marker.
@@ -77,23 +85,23 @@ Create a command-line multiplayer game where players compete to guess the locati
 Scope
 
 Inclusions:
-- Host server initiating the game upon 2 or more players joining.
+- Host server initiating the game upon two players joining.
 - Real-time updates for all clients about player moves and game state.
-- Random player assignment for the first turn.
+- Turn-based roles for hiding and guessing.
 - A winning condition (first to 3 correct guesses).
-- Resilient connection handling and error messages.
+- Graceful error handling for invalid inputs and disconnections.
 
 Exclusions:
-- Usability on Windows OS only (other platforms not guaranteed).
+- Usability on platforms other than Windows.
 - Graphical user interface (GUI).
 
 ---
 
 Deliverables
 
-- Fully functional server.py and client.py scripts.
-- Updated requirements.txt for dependencies.
-- Documentation in this README file.
+1. Fully functional server.py and client.py scripts.
+2. requirements.txt for environment setup.
+3. Detailed documentation in this README file.
 
 ---
 
@@ -121,8 +129,8 @@ Software:
 Assumptions
 
 - All transmissions utilize TCP.
-- The server is the single point of truth for the game state.
-- The game can have more than two players, but only one player takes a turn at a time.
+- The server manages and synchronizes the game state.
+- The game can have more than two players in the future, but currently supports only two.
 
 ---
 
@@ -140,11 +148,21 @@ Communication Plan
 
 ---
 
+Logs and Debugging
+
+- All server logs are stored in logs/server.log.
+- All client logs are stored in logs/client.log.
+- Logs include details about player connections, disconnections, moves, and game events.
+
+---
+
 Future Enhancements (Optional)
 
-- Add chat functionality for player communication.
-- Implement point tracking and statistics for completed games.
-- Introduce more game modes or difficulties.
+1. Add chat functionality for player communication.
+2. Implement point tracking and statistics for completed games.
+3. Introduce additional game modes or difficulties.
+4. Add support for more than two players.
+5. Implement a graphical user interface (GUI) for improved gameplay experience.
 
 ---
 
@@ -155,10 +173,24 @@ pip install -r requirements.txt
 
 ---
 
-Logs and Debugging
+Example Gameplay
 
-- All server logs are stored in logs/server.log.
-- All client logs are stored in logs/client.log.
-- Logs include details about player connections, disconnections, and game events.
+Initial Game State:
+Game State:
+Turn: Player 1
+Scores: {'1': 0, '2': 0}
 
----
+Player 1 hides the marker:
+Choose a position to hide the marker (0-2): 1
+Player 1 has hidden the marker!
+
+Player 2 guesses the marker's position:
+Enter 'play' to make a move, or 'quit' to exit: play
+Guess the position of the marker (0-2): 1
+Player 2 guessed correctly!
+
+Updated Scores:
+Game State:
+Turn: Player 1
+Scores: {'1': 0, '2': 1}
+
