@@ -12,7 +12,7 @@ class TCPClient:
         self.server_port = server_port
         self.client_socket = None
         self.player_id = None
-        self.game_state = None
+        self.game_state = {"players": {}}
         self.running = True
 
         self._setup_logging()
@@ -34,11 +34,17 @@ class TCPClient:
             print("Failed to connect to the server. Please check the connection details.")
 
     def listen_for_messages(self):
+        buffer = ""
         while self.running:
             try:
-                message = self.client_socket.recv(1024).decode()
-                if not message:
+                data = self.client_socket.recv(1024).decode()
+                if not data:
+                    logging.warning("Disconnected from server.")
+                    self.running = False
                     break
+                buffer += data
+                while "\n" in buffer:
+                    message, buffer = buffer.split("\n", 1)
                 self._handle_server_response(json.loads(message))
             except Exception as e:
                 logging.error(f"Error receiving message: {e}")
@@ -53,6 +59,10 @@ class TCPClient:
             self.display_game_state()
         elif response["type"] == "message":
             print(response["message"])
+            if response["message"] == f"Player {self.player_id} wins!":
+                print("You win!")
+            elif response["message"] == f"Player {(self.player_id + 1)%2} wins!":
+                print("You lose!")
 
     def send_message(self, message):
         try:
@@ -65,8 +75,11 @@ class TCPClient:
             print("Game state not available yet. Please wait.")
             return
 
+        print(f"Player ID: {self.player_id}, Current Turn: {self.game_state['turn']}, Current Hider: {self.game_state['current_hider']}")
+
         # Determine if it's the player's turn
-        if self.game_state["turn"] == self.player_id:
+        if self.game_state["turn"] % 4 < 2 and self.player_id == 1 or \
+        self.game_state["turn"] % 4 >= 2 and self.player_id == 2:
             # Hider Role
             if self.game_state["current_hider"] == self.player_id:
                 position = int(input("Choose a position to hide the marker (0-2): "))
@@ -76,10 +89,11 @@ class TCPClient:
                 self.send_message({"type": "guess", "position": position})
         else:
             print("Waiting for the other player to make their move.")
+            return
 
     def display_game_state(self):
         print("\nGame State:")
-        print(f"Turn: Player {self.game_state['turn']}")
+        print(f"Turn: Player {1 if self.game_state['turn'] % 4 in [1, 2] else 2}")
         print(f"Scores: {self.game_state['scores']}")
         print()
 
@@ -97,9 +111,10 @@ if __name__ == "__main__":
     client = TCPClient(server_ip=args.ip, server_port=args.port)
 
     while client.running:
-        command = input("Enter 'play' to make a move, or 'quit' to exit: ").strip().lower()
-        if command == "play":
-            client.play_turn()
-        elif command == "quit":
-            client.running = False
-            client.send_message({"type": "quit"})
+        if len(client.game_state["players"]) == 2:
+            command = input("Enter 'play' to make a move, or 'quit' to exit\n").strip().lower()
+            if command == "play":
+                client.play_turn()
+            elif command == "quit":
+                client.running = False
+                client.send_message({"type": "quit"})
