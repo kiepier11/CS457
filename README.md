@@ -156,20 +156,35 @@ Logs and Debugging
 
 ---
 
-Future Enhancements (Optional)
+Error Handling
 
-1. Add chat functionality for player communication.
-2. Implement point tracking and statistics for completed games.
-3. Introduce additional game modes or difficulties.
-4. Add support for more than two players.
-5. Implement a graphical user interface (GUI) for improved gameplay experience.
+- Invalid Inputs: Prompts users to re-enter valid values for guesses or marker positions.
+- Network Errors: Detects disconnections and ensures the remaining player is notified.
+- Game State Integrity: Synchronizes state after any error or unexpected condition.
+- Unexpected Behavior: Logs details of issues for debugging and troubleshooting.
 
 ---
 
-Requirements File
+Integration Testing
 
-To recreate the development environment, use the requirements.txt file:
-pip install -r requirements.txt
+1. Test player connection/disconnection scenarios.
+2. Simulate a game with valid and invalid inputs to ensure stability.
+3. Verify state synchronization across clients during gameplay.
+4. Validate end-to-end functionality by completing multiple game rounds.
+
+---
+
+Security/Risk Evaluation
+
+- Potential Risks:
+  1. Unauthorized clients attempting to connect.
+  2. Players exploiting input mechanisms to disrupt the game.
+  3. Data integrity issues if messages are malformed.
+
+- Mitigation:
+  1. Add basic authentication or whitelisting of IPs.
+  2. Validate all inputs and sanitize messages.
+  3. Use checksum or hashing mechanisms to verify message integrity.
 
 ---
 
@@ -193,4 +208,11 @@ Updated Scores:
 Game State:
 Turn: Player 1
 Scores: {'1': 0, '2': 1}
+
+---
+
+Requirements File
+
+To recreate the development environment, use the requirements.txt file:
+pip install -r requirements.txt
 
