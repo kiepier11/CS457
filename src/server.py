@@ -70,13 +70,18 @@ class TCPServer:
 
     def _send_message(self, client_socket, message):
         try:
-            client_socket.send(json.dumps(message).encode())
+            client_socket.send((json.dumps(message)+"\n").encode())
         except Exception as e:
             logging.error(f"Error sending message: {e}")
 
     def _broadcast_message(self, message):
         for client_socket, _ in self.clients:
-            self._send_message(client_socket, {"type": "message", "message": message})
+            logging.debug(f"Broadcasting message: {message}")
+            try:
+                self._send_message(client_socket, {"type": "message", "message": message})
+            except Exception as e:
+                logging.error(f"Error broadcasting state to a client: {e}")
+                self._close_client_connection(client_socket, None, _)
 
     def _broadcast_state(self):
         state_message = {"type": "game_state", "state": self.game_state}
@@ -104,15 +109,17 @@ class TCPServer:
             self._close_client_connection(client_socket, None, player_id)
 
     def _switch_turn(self):
-        # Alternate hider and guesser roles
-        self.game_state["current_hider"] = (self.game_state["current_hider"] % self.player_count) + 1
-        self.game_state["turn"] = (self.game_state["current_hider"] % self.player_count) + 1
-        self.game_state["key_position"] = None if self.game_state["turn"] == self.game_state["current_hider"] else self.game_state["key_position"]
+        # Alternate hider and guesser roles every other turn
+        turn = self.game_state["turn"] + 1
+        self.game_state["turn"] = turn
+        self.game_state["current_hider"] = 1 if turn % 4 in [1, 2] else 2
+        self.game_state["key_position"] = self.game_state["key_position"]
         self._broadcast_state()
 
     def _check_winner(self):
         for player_id, score in self.game_state["scores"].items():
             if score >= 3:
+                print(f"Player {player_id} wins!")
                 self._broadcast_message(f"Player {player_id} wins!")
                 self._reset_game()
 
