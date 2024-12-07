@@ -49,6 +49,18 @@ The first player to correctly guess the hidden position three times is declared 
 
 ---
 
+Roadmap
+
+Building on what we have, we would expand the game to allow more than two players to play. The decision for which player the next turn goes to is more complicated than the static arithmetic implemented, since a changing number of players changes the turn number associated with the player hiding the marker. This also requires making a timeout after which a player is removed from the scoreboard for not participating. We would then create a visual UI to animate the act of hiding and revealing a player's guess, as well as celebrating the first to reach the win condition. Lastly, we would allow for the server to host multiple games to allow a new player to select a game where others have not accumulated many points so that the game is fairer.
+
+---
+
+Retrospective
+
+We developed the client-server logic at a good pace using the provided code from the labs. The CLI argument parsing and logging proved to be no issue. We checked every permutation of the game in testing to ensure both clients shared the same state. There was a point where a message could not be correctly decoded on the client side due to timing, so we added a buffer. During presentation, we discovered missing boundary checks for inputs for placing the marker and guessing its location. This could have been checked for by making unit tests to run through the game instead of manually testing the client-server pair. We could have met our goals ahead of each sprint's due date, but overall, progress was timely and decent.
+
+---
+
 Features
 
 - Multiplayer Support: Supports two players connected to a central server.
